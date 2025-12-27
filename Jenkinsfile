@@ -28,4 +28,10 @@ pipeline {
 		
 		
 	}
+	
+	post {
+		success {
+			sh 'echo "pipeline done"'
+		}
+	}
 }
