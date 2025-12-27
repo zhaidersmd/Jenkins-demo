@@ -13,6 +13,7 @@ pipeline {
 		
 		stage('Build') {
             steps {
+				sh 'echo "Using secured credentials"'
                 sh 'mvn clean package -DskipTests'
             }
         }
