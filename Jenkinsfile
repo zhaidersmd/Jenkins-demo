@@ -1,5 +1,9 @@
 pipeline {
 	agent any
+	environment {
+		GIT_CREDS = credentials('gituserpass')
+		APP_NAME = "jenkins-demo-Env"
+	}
 	stages {
 		stage('checkout') {
 			steps {
@@ -10,6 +14,7 @@ pipeline {
 		
 		stage('Build') {
             steps {
+				sh 'echo "Using secured credentials"'
                 sh 'mvn clean package -DskipTests'
             }
         }
@@ -28,6 +33,7 @@ pipeline {
 		
 		
 	}
+
 	
 	post {
 		success {
