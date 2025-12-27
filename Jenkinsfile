@@ -1,5 +1,8 @@
 pipeline {
 	agent any
+	environment {
+		GIT_CREDS = credentials('git-creds')
+	}
 	stages {
 		stage('checkout') {
 			steps {
