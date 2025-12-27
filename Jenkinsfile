@@ -1,7 +1,8 @@
 pipeline {
 	agent any
 	environment {
-		GIT_CREDS = credentials('git-creds')
+		GIT_CREDS = credentials('gituserpass')
+		APP_NAME = "jenkins-demo-Env"
 	}
 	stages {
 		stage('checkout') {
